@@ -1,9 +1,6 @@
 package schach.daten;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Properties;
-import java.util.Set;
 
 // Basis-Datencontainer
 public class D {
@@ -12,17 +9,6 @@ public class D {
 	
 	public D() {
 		addString("klasse", "" + this.getClass().getSimpleName());
-	}
-	
-	public D(Properties p) {
-		this();
-		if (p == null)
-			throw new RuntimeException("D Konstruktor: Properties duerfen nicht NULL sein!");
-		this.p = p;
-	}
-	
-	public static int toInt(String s) {
-		return Integer.parseInt(s);
 	}
 	
 	public void addString(String name, String wert) {
@@ -37,12 +23,6 @@ public class D {
 	
 	public void addBool(String name, boolean wert) {
 		p.setProperty(name, "" + wert);
-	}
-	
-	public void addDecimal(String name, String wert) {
-		if (wert == null)
-			wert = "0.0";
-		p.setProperty(name, wert);
 	}
 	
 	public void setString(String name, String wert) {
@@ -75,25 +55,8 @@ public class D {
 		p.setProperty(name, "" + wert);
 	}
 	
-	public void invertBool(String name) {
-		if (!existKey(name))
-			throw new RuntimeException("Daten invertBool: Attribut existiert nicht!");
-		boolean wert = getBool(name);
-		p.setProperty(name, "" + (!wert));
-	}
-	
-	public void setDecimal(String name, String wert) {
-		if (wert == null)
-			wert = "0.0";
-		p.setProperty(name, wert);
-	}
-	
 	public boolean existKey(String name) {
 		return p.containsKey("" + name);
-	}
-	
-	public boolean existValue(String name) {
-		return p.containsValue("" + name);
 	}
 	
 	public String getString(String name) {
@@ -117,34 +80,6 @@ public class D {
 			ergebnis = Boolean.parseBoolean(p.getProperty(name));
 		} catch (Exception e) {
 			throw new RuntimeException("Daten getBool: " + e.getMessage());
-		}
-		return ergebnis;
-	}
-	
-	public BigDecimal getDecimal(String name) {
-		BigDecimal ergebnis = new BigDecimal(0);
-		try {
-			ergebnis = new BigDecimal(p.getProperty(name));
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException("Daten getDecimal: " + e.getMessage());
-		}
-		return ergebnis;
-	}
-	
-	public ArrayList<String> getAttribute() {
-		Set<String> keys = p.stringPropertyNames();
-		ArrayList<String> ergebnis = new ArrayList<String>();
-		ergebnis.addAll(keys);
-		return ergebnis;
-	}
-	
-	public ArrayList<String> getListe() {
-		ArrayList<String> ergebnis = new ArrayList<String>();
-		int i = 0;
-		while (existKey("" + i)) {
-			ergebnis.add(getString("" + i));
-			i++;
 		}
 		return ergebnis;
 	}
