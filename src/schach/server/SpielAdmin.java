@@ -11,8 +11,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-@SuppressWarnings("unused")
 @Path("schach/spiel/admin")
+@SuppressWarnings("unused")
 public class SpielAdmin extends ResourceConfig implements iBackendSpielAdmin {
 	
 	@GET
@@ -26,12 +26,13 @@ public class SpielAdmin extends ResourceConfig implements iBackendSpielAdmin {
 	@Path("neuesSpiel/{id}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String neuesSpiel(
 			@PathParam("id") int id) {
 		try {
 			schach.backend.Spiel spiel = new schach.backend.Spiel();
 			spiel.initStandardbelegung();
-			schach.server.Spiel.setSpiel(id, spiel);
+			Spiel.setSpiel(id, spiel);
 			return Xml.verpackeOK("Spiel erfolgreich erstellt.");
 		} catch (Exception e) {
 			return Xml.verpackeFehler(e);
@@ -42,12 +43,13 @@ public class SpielAdmin extends ResourceConfig implements iBackendSpielAdmin {
 	@Path("ladenSpiel/{id}/{pfad}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String ladenSpiel(
 			@PathParam("id") int id,
 			@PathParam("pfad") String pfad) {
 		try {
 			schach.backend.Spiel spiel = new schach.backend.Spiel(pfad);
-			schach.server.Spiel.setSpiel(id, spiel);
+			Spiel.setSpiel(id, spiel);
 			return Xml.verpackeOK("Spiel erfolgreich geladen.");
 		} catch (Exception e) {
 			return Xml.verpackeFehler(e);
@@ -58,6 +60,7 @@ public class SpielAdmin extends ResourceConfig implements iBackendSpielAdmin {
 	@Path("speichernSpiel/{id}/{pfad}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String speichernSpiel(
 			@PathParam("id") int id,
 			@PathParam("pfad") String pfad) {

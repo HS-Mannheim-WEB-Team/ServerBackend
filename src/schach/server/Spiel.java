@@ -17,8 +17,8 @@ import javax.ws.rs.Produces;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-@SuppressWarnings("unused")
 @Path("schach/spiel")
+@SuppressWarnings("unused")
 public class Spiel extends ResourceConfig implements iBackendSpiel {
 	
 	private static schach.backend.Spiel[] spiele = new schach.backend.Spiel[32];
@@ -45,6 +45,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getAktuelleBelegung/{id}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getAktuelleBelegung(
 			@PathParam("id") int id) {
 		try {
@@ -59,6 +60,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getBelegung/{id}/{nummer}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getBelegung(
 			@PathParam("id") int id,
 			@PathParam("nummer") int nummer) {
@@ -74,6 +76,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getSpielDaten/{id}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getSpielDaten(
 			@PathParam("id") int id) {
 		try {
@@ -88,6 +91,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getAlleErlaubtenZuege/{id}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getAlleErlaubtenZuege(
 			@PathParam("id") int id) {
 		try {
@@ -108,6 +112,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getFigur/{id}/{position}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getFigur(
 			@PathParam("id") int id,
 			@PathParam("position") String position) {
@@ -125,6 +130,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getErlaubteZuege/{id}/{position}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getErlaubteZuege(
 			@PathParam("id") int id,
 			@PathParam("position") String position) {
@@ -146,6 +152,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("ziehe/{id}/{von}/{nach}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String ziehe(
 			@PathParam("id") int id,
 			@PathParam("von") String von,
@@ -162,6 +169,7 @@ public class Spiel extends ResourceConfig implements iBackendSpiel {
 	@Path("getZugHistorie/{id}")
 	@Consumes("text/plain")
 	@Produces("application/xml")
+	@Override
 	public String getZugHistorie(
 			@PathParam("id") int id) {
 		try {
