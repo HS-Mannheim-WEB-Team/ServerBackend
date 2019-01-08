@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="WebGroup6.schach-backend.main" target="1.8" />
+      <module name="WebGroup6.schach-backend.test" target="1.8" />
+      <module name="WebGroup6.SchachFrontendBase.main" target="1.8" />
+      <module name="WebGroup6.SchachFrontendBase.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

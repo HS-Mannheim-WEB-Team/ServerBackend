@@ -1,12 +1,12 @@
 package schach.backend;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import schach.daten.D_Belegung;
 import schach.daten.FigurEnum;
 import schach.daten.SpielEnum;
 import schach.daten.ZugEnum;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Belegung {
 	

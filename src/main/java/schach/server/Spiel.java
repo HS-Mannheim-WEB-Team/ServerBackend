@@ -1,6 +1,12 @@
 package schach.server;
 
 import org.glassfish.jersey.server.ResourceConfig;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import javax.ws.rs.*;
+
 import schach.backend.Figur;
 import schach.backend.Zug;
 import schach.daten.D;
@@ -8,14 +14,6 @@ import schach.daten.D_ZugHistorie;
 import schach.daten.Xml;
 import schach.interfaces.iBackendSpiel;
 import server.Tools;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 @Path("schach/spiel")
 @SuppressWarnings("unused")

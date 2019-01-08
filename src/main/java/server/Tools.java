@@ -1,11 +1,12 @@
 package server;
 
-import schach.daten.Xml;
-
-import javax.ws.rs.Path;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import javax.ws.rs.Path;
+
+import schach.daten.Xml;
 
 public class Tools {
 	

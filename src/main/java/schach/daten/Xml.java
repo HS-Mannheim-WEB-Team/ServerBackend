@@ -1,13 +1,13 @@
 package schach.daten;
 
-import schach.backend.Parameter;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import schach.backend.Parameter;
 
 public class Xml {
 	

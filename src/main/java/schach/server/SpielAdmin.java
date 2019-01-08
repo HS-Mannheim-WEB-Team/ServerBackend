@@ -1,15 +1,12 @@
 package schach.server;
 
 import org.glassfish.jersey.server.ResourceConfig;
+
+import javax.ws.rs.*;
+
 import schach.daten.Xml;
 import schach.interfaces.iBackendSpielAdmin;
 import server.Tools;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
 
 @Path("schach/spiel/admin")
 @SuppressWarnings("unused")

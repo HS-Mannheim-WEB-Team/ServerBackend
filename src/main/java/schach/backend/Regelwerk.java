@@ -1,10 +1,10 @@
 package schach.backend;
 
+import java.util.HashSet;
+
 import schach.daten.FigurEnum;
 import schach.daten.SpielEnum;
 import schach.daten.ZugEnum;
-
-import java.util.HashSet;
 
 public final class Regelwerk {
 	

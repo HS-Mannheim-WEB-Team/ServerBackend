@@ -1,16 +1,5 @@
 package schach.backend;
 
-import schach.daten.D;
-import schach.daten.D_Belegung;
-import schach.daten.D_Fehler;
-import schach.daten.D_Figur;
-import schach.daten.D_OK;
-import schach.daten.D_Spiel;
-import schach.daten.FigurEnum;
-import schach.daten.SpielEnum;
-import schach.daten.Xml;
-import schach.daten.ZugEnum;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,6 +7,8 @@ import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import schach.daten.*;
 
 public class Spiel {
 	
